@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //pages
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import Register from './pages/Register/Register';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </div>
         <Footer />
