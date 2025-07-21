@@ -1,5 +1,5 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import { db } from '../firebase/config'
 
 import {
     getAuth,
@@ -46,7 +46,7 @@ export const useAuthentication = () => {
       
             let systemErrorMessage;
       
-            if (error.message.includes("Password")) {
+            if (error.message.includes("at least 6 characters")) {
               systemErrorMessage = "A senha precisa conter pelo menos 6 caracteres.";
             } else if (error.message.includes("email-already")) {
               systemErrorMessage = "E-mail já cadastrado.";
@@ -58,6 +58,17 @@ export const useAuthentication = () => {
         } finally {
             setLoading(false)
         }
+    }
+
+    useEffect(() => {
+        return () => setCancelled(true)
+    }, [])
+
+    return {
+        auth,
+        createUser,
+        error,
+        loading,
     }
 }
 

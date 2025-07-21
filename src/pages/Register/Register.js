@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import { useAuthentication } from '../../hooks/useAuthentication'
 
 
 const Register = () => {
@@ -12,8 +12,9 @@ const Register = () => {
   const [error, setError] = useState('')
   const { createUser, error: authError, loading } = useAuthentication()
 
-  const handleSubmit = (e) => { 
+  const handleSubmit = async(e) => { 
     e.preventDefault()
+    setError('')
 
     const user = {
       displayName,
@@ -26,7 +27,9 @@ const Register = () => {
       return
     }
 
-    console.log(user)
+    const res = await createUser(user)
+
+    console.log(res)
   }
 
   useEffect(() => {
@@ -84,7 +87,9 @@ const Register = () => {
             value={confirmPassword}
           />
         </label>
-        <button type="submit" className={'btn'}>Cadastrar</button>
+        {!loading && <button type="submit" className={'btn'}>Cadastrar</button>}
+
+        {loading && <button className='btn' disabled>Aguarde...</button>}
         {error && <p className='error'>{error}</p>}
         {loading && <p>Carregando...</p>}
       </form>
