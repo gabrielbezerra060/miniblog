@@ -21,11 +21,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install dependencies with Yarn
-        run: yarn install
+      - name: Build application
+        run: npm run build
 
-      - name: Start web environment
-        run: npm start 
+      - name: Install dependencies with Npm
+        run: npm install -g serve
+      
+      - name: Serve the build
+        run: serve -s build -l 3000
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps

@@ -25,7 +25,7 @@ import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   const [user, setUser] = useState(null)
-  const { auth, logout } = useAuthentication();
+  const { auth } = useAuthentication();
 
   const loadingUser = user === undefined;
   useEffect(() => {
