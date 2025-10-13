@@ -1,5 +1,11 @@
 {
-    "include": ["src"],
-    "exclude": ["node_modules", "dist", "test", "**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts",
-     "**/*.spec.tsx", "tests", "e2e", "playwright"]
+    "compilerOptions": {
+        "allowJs": true, // Allow JavaScript files
+        "checkJs": false, // Optional: Disable type checking for JS files
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "noEmit": true // Prevent TypeScript from emitting files
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "src/tests", "e2e", "playwright"]
 }
