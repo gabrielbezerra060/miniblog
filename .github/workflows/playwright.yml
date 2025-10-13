@@ -32,10 +32,10 @@ jobs:
       - name: Build application
         run: npm run build
       
-      # - name: Serve the build
-      #   run: | 
-      #     serve -s build -l 3000 &
-      #     npx wait-on http://localhost:3000 --timeout 10000
+      - name: Serve the build
+        run: | 
+          serve -s build -l 3000 &
+          npx wait-on http://localhost:3000 --timeout 10000
 
       - name: Run Playwright Tests
         run: npx playwright test
