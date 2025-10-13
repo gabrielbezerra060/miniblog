@@ -38,7 +38,7 @@ jobs:
       - name: Serve the build
         run: | 
           serve -s build -l 3000 &
-          npx wait-on http://localhost:3000 --timeout 10000
+          npx wait-on http://localhost:3000 --timeout 60000
 
       - name: Run Playwright Tests
         run: npx playwright test
