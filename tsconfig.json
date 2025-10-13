@@ -1,0 +1,5 @@
+{
+    "include": ["src"],
+    "exclude": ["node_modules", "dist", "test", "**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts",
+     "**/*.spec.tsx", "tests", "e2e", "playwright"]
+}
