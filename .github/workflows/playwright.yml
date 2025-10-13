@@ -21,17 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
 
       - name: Build application
         run: npm run build
-
-      - name: Verify Playwright installation
-        run: npm install @playwright/test
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
       
       # - name: Serve the build
       #   run: | 
