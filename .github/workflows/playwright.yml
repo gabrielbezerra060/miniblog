@@ -4,8 +4,6 @@ on:
   pull_request:
     branches: [main, master]
 
-env:
-  PLAYWRIGHT_BASE_URL: http://localhost:3000
 
 jobs:
   test:
@@ -24,29 +22,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Verify Playwright installation
-        run: |
-          ls -la node_modules/@playwright
-          npm list @playwright/test
-
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
       - name: Build application
         run: npm run build
 
-      - name: Install serve and wait-on
-        run: npm install -g serve wait-on
+      # - name: Install serve and wait-on
+      #   run: npm install -g serve wait-on
       
-      - name: Serve the build
-        run: | 
-          serve -s build -l 3000 &
-          npx wait-on http://localhost:3000 --timeout 60000
-
-      - name: Debug Env
-        run: |
-          echo "Current Environment Variables:"
-          echo "Base URL: ${{ env.PLAYWRIGHT_BASE_URL }}"
+      # - name: Serve the build
+      #   run: | 
+      #     serve -s build -l 3000 &
+      #     npx wait-on http://localhost:3000 --timeout 60000
 
       - name: Run Playwright Tests
         run: npx playwright test
