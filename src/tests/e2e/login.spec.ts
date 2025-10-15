@@ -5,7 +5,7 @@ import * as constants from "../constants";
 test.describe.parallel("Login Page Tests", () => {
     test.beforeEach(async ({page}) => {
         console.log(page.url());
-        await page.goto("http://localhost:4000/login");
+        await page.goto("http://localhost:3000/login");
         expect(page).toHaveURL(/.*login/);
     })
 
