@@ -3,7 +3,7 @@
         "allowJs": true, // Allow JavaScript files
         "checkJs": false, // Optional: Disable type checking for JS files
         "outDir": "./dist",
-        "rootDir": "./src",
+        "rootDir": "./",
         "noEmit": true // Prevent TypeScript from emitting files
     },
     "include": ["src/**/*", "playwright.config.ts"],
