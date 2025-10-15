@@ -32,7 +32,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     colorScheme: 'light',
     browserName: 'chromium',
-    headless: false
+    headless: true
   },
   // Folder for test artifacts such as screenshots, videos, traces, etc.
   outputDir: 'test-results',
