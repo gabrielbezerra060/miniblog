@@ -64,7 +64,7 @@ const Login = () => {
         {!loading && <button type="submit" className={'btn'}>Entrar</button>}
 
         {loading && <button className='btn' disabled>Aguarde...</button>}
-        {error && <p className='error'>{error}</p>}
+        {error && <p data-testid="loginError" className='error'>{error}</p>}
       </form>
     </div>
   )
