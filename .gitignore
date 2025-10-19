@@ -5,9 +5,13 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-/playwright-report
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/coverage/
 
 # Playwright
 node_modules/
