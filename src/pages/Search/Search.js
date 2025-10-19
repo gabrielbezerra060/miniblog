@@ -1,0 +1,17 @@
+import React from 'react'
+
+//hooks
+import { useQuery } from '../../hooks/useQuery';
+import { useFetchDocuments } from '../../hooks/useFetchDocuments';
+
+const Search = () => {
+    const query = useQuery();
+    const search = query.get("q");
+
+    return (<div>
+        <h1>Search Page</h1>
+        <p>{search}</p>
+    </div>);
+}
+
+export default Search;
