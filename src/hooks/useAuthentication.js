@@ -28,8 +28,6 @@ export const useAuthentication = () => {
 
     setLoading(true);
 
-    console.log(data);
-
     try {
       const { user } = await createUserWithEmailAndPassword(
         auth,
@@ -77,11 +75,11 @@ export const useAuthentication = () => {
     checkIfIsCancelled();
 
     setLoading(true);
-    setError(false);
 
-    console.log(data);
+    
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
+      console.log(auth);
     } catch (error) {
       console.log(error.message);
       console.log(typeof error.message);

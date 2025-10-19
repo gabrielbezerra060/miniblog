@@ -41,7 +41,7 @@ const CreatePost = () => {
       return;
     }
 
-    //console.log(user)
+    console.log(user)
     // console.log({
     //   title,
     //   image,
@@ -57,7 +57,7 @@ const CreatePost = () => {
       body, 
       tags: tagsArray, 
       uid: user.uid,
-      createdBy: user.auth.displayName || "Anonymous"
+      createdBy: user.displayName || "Anonymous"
     });
 
     //rediret home page
