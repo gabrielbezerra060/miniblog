@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react'
 import { useAuthentication } from '../../hooks/useAuthentication'
 import styles from './Login.module.css'
 
-
-
-
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -20,14 +17,13 @@ const Login = () => {
             email,
             password,
         }
-        
+
         const res = await login(user)
         
         console.log(res)
     }
     
     useEffect(() => {
-        console.log(authError);
         if (authError) {
             setError(authError);
         }
