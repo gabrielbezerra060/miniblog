@@ -17,11 +17,11 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
             try {
                 const collectionRef = collection(db, docCollection);    
                 let q;
-
+                console.log("search:", search, " uid:", uid);
                 if (search) {
                     q = query(  
                         collectionRef,
-                        where("tagsArray", "array-contains", search),
+                        where("tags", "array-contains", search),
                         orderBy("createdAt", "desc")
                     );
                 } else if (uid) {

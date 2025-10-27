@@ -41,16 +41,6 @@ const CreatePost = () => {
       return;
     }
 
-    console.log(user)
-    // console.log({
-    //   title,
-    //   image,
-    //   body,
-    //   tags: tagsArray,
-    //   uid: user?.uid, // Added optional chaining for safety
-    //   createdBy: user?.displayName, // Added optional chaining for safety
-    // });
-
     insertDocument({ 
       title, 
       image, 
