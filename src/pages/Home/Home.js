@@ -1,19 +1,21 @@
 import React from 'react';
+import { useState } from 'react'
 import styles from './Home.module.css';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useFetchDocuments } from '../../hooks/useFetchDocuments';
 import PostDetail from '../../components/PostDetail';
 
 const Home = () => {
-    //const [query, setQuery] = useState("");
+    const [query, setQuery] = useState("");
     const {documents: posts, loading} = useFetchDocuments("posts");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // if (query) {
-        //     return navigate(`/search?q=${query}`);
-        // }
+        if (query) {
+            return navigate(`/search?q=${query}`);
+        }
     };
 
     return (
@@ -23,7 +25,7 @@ const Home = () => {
                 <input
                     type="text"
                     placeholder="Ou busque por tags..."
-                    //onChange={(e) => setQuery(e.target.value)}
+                    onChange={(e) => setQuery(e.target.value)}
                 />
                 <button className="btn btn-dark">Pesquisar</button>
             </form>
