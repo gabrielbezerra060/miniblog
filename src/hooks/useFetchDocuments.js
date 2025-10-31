@@ -9,7 +9,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
     //deal with memory leak
     const [cancelled, setCancelled] = useState(false);
-
+    
     useEffect(() => {
         const fetchDocuments = async () => {
             if (cancelled) return;
