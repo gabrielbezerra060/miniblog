@@ -20,6 +20,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Search from './pages/Search/Search';
 import Post from './pages/Post/Post';
+import EditPost from './pages/EditPost/EditPost';
 
 
 //context
@@ -71,7 +72,10 @@ function App() {
                 path="/dashboard" 
                 element={user ? <Dashboard /> : <Navigate to="/login" />} 
               />
-              
+              <Route 
+                path="/posts/edit/:id" 
+                element={user ? <EditPost /> : <Navigate to="/login" />} 
+              />              
             </Routes>
           </div>
           <Footer />
